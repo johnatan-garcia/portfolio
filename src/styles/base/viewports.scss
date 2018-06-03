@@ -1,0 +1,46 @@
+
+/* Viewports. Keep it simple */
+
+$viewport-xsmall:   375px;
+$viewport-small:    768px;
+$viewport-medium:   1024px;
+$viewport-regular:  1240px;
+
+/* Media query mixins. Defined for mobile-first */
+
+@mixin media-min-xsmall {
+    @media only screen and (min-width: #{($viewport-xsmall)-1}) {
+        @content;
+    }
+}
+
+@mixin media-min-small {
+    @media only screen and (min-width: #{($viewport-small)-1}) {
+        @content;
+    }
+}
+
+@mixin media-min-medium {
+    @media only screen and (min-width: #{($viewport-medium)-1}) {
+        @content;
+    }
+}
+
+@mixin media-min-desktop {
+    @media only screen and (min-width: #{($viewport-regular)-1}) {
+        @content;
+    }
+}
+
+@mixin retina {
+    @media only screen and (min-device-pixel-ratio: 2),
+	only screen and (min-resolution: 192dpi) and (orientation : landscape) {
+        @content;
+    }
+}
+
+@mixin high-contrast {
+    @media screen and (-ms-high-contrast: active) {
+        @content;
+    }
+}

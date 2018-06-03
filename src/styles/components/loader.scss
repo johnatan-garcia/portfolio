@@ -1,0 +1,29 @@
+.mainLoader {
+    display: table;
+    width: 100vw;
+    height: 100vh;
+    background: $dark-night;
+
+    .logoContainer {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        width: 65vmin;
+        height: 65vmin;
+
+        @include media-min-medium {
+            width: 42.5vmin;
+            height: 42.5vmin;
+        }
+
+        svg {
+            fill: $gray-shade;
+            animation: rotateLogo 4.75s infinite;
+        }
+    }
+}
+
+@keyframes rotateLogo {
+    0% { transform: rotate3d(0, 1, 0, 0deg) }
+    100% { transform: rotate3d(0, 1, 0, 360deg) }
+}
