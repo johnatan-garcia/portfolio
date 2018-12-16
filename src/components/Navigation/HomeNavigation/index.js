@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import NavigationItem from './NavigationItem';
+
 class HomeNavigation extends Component {
 
     render() {
         let navigationBoxes = this.props.navigationItems
             .map(item => {
-                return <div className="navigationItem font-title">{item.name}</div>;
+                return <NavigationItem key={item.name} name={item.name} url={item.url ? item.url : '#'} />;
             })
             .reduce((array, element) => {
                 return array.concat(element);

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
@@ -7,7 +8,8 @@ import thunk from 'redux-thunk';
 import statusReducer from './store/reducers/statusReducer';
 
 import './styles/index.scss';
-import './assets/global/nycity.webm';
+import './assets/video/nycity.webm';
+import './assets/video/nightsky.webm';
 
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -22,7 +24,9 @@ const store = createStore(rootReducer, compose(
 
 const app = (
     <Provider store={store}>
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </Provider>
 );
 

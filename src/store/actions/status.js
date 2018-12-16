@@ -41,7 +41,7 @@ export const init = token => {
         dispatch(loadDataStart());
         Promise.all([loadAssets(), loadData(token)])
             .then(values => {
-                console.log(getState());
+                console.log('assets Loaded', getState());
                 dispatch(loadDataSuccess(values[1].data.token, values[1].data.sections));
             })
             .catch(error => {

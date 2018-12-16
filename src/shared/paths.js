@@ -1,5 +1,6 @@
 const paths = {
-    mainBackgroundVideo: '/static/media/nycity.webm'
+    //mainBackgroundVideo: '/static/video/nycity.webm'
+    mainBackgroundVideo: '/static/video/nightsky.webm'
 };
 
 export default paths;
